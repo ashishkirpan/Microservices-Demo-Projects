@@ -1,0 +1,16 @@
+Git Command Details
+-----------
+
+1. How to commit 
+----------------
+git status
+git add .
+git commit -m "Changes description"
+git push origin master
+git push
+
+2. How to pull/clone project from GIT
+git clone 'https://github.com/ashishkirpan/Microservices-Demo-Projects.git
+
+3. How to get updated changes from Git Repo
+git pull
