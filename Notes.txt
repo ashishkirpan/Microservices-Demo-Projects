@@ -1,0 +1,50 @@
+
+
+dashboard-service		user-service 		post-service
+		
+					
+					
+H2 Console - http://localhost:8080/h2-console/
+
+Ports
+-----
+user-service				- 8080, 8081
+post-service				- 8100, 8101
+dashboard-service			- 8000, 8001
+-- spring-cloud-config-server	- 8888
+my-netflix-eureka-naming-server - 8761
+
+
+Swagger
+-------
+http://localhost:8080/v2/api-docs or
+http://localhost:8080/swagger-ui/ or 
+http://localhost:8080/swagger-ui/index.html
+
+
+user-service
+------------
+Get 	- /users 			: http://localhost:8080/users
+Get 	- /users/{id}		: http://localhost:8080/users/2
+Delete	- /users/{id}		: http://localhost:8080/users/1
+Post	- /users 			: http://localhost:8080/users
+
+user-service
+------------
+Get 	- /posts 				: http://localhost:8100/posts
+Get 	- /posts/{id}			: http://localhost:8100/posts/2
+Delete	- /posts/{id}			: http://localhost:8100/posts/1
+Post	- /posts 				: http://localhost:8100/posts
+Get 	- /posts/user/{userId}	: http://localhost:8100/posts/user/1001
+
+dashboard-service
+-----------------
+Get 	- /summary/user/1001 	: http://localhost:8000/summary/users
+	Without Feign 				: http://localhost:8000/summary/user/1001
+	With Feign & Ribbon			: http://localhost:8000/summary-feign/user/1001
+Get								: http://localhost:8000/summary/all/user/and/post
+
+
+eureka-naming-server
+--------------------
+http://localhost:8761
